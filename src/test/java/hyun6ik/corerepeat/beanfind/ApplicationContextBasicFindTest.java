@@ -21,7 +21,7 @@ public class ApplicationContextBasicFindTest {
         //given && when
         final MemberService memberService = ac.getBean("memberService", MemberService.class);
         //then
-        assertThat(memberService).isInstanceOf(MemberServiceImpl.class);
+        assertThat(memberService).isInstanceOf(MemberService.class);
     }
 
     @Test
