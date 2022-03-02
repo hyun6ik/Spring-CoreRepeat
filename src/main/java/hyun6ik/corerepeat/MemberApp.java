@@ -1,8 +1,8 @@
 package hyun6ik.corerepeat;
 
-import hyun6ik.corerepeat.domain.Member;
-import hyun6ik.corerepeat.domain.service.MemberService;
-import hyun6ik.corerepeat.infrastructure.MemberServiceImpl;
+import hyun6ik.corerepeat.domain.member.Member;
+import hyun6ik.corerepeat.domain.member.MemberService;
+import hyun6ik.corerepeat.infrastructure.member.MemberServiceImpl;
 
 public class MemberApp {
 

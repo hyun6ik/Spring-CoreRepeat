@@ -1,6 +1,6 @@
-package hyun6ik.corerepeat.infrastructure;
+package hyun6ik.corerepeat.infrastructure.member;
 
-import hyun6ik.corerepeat.domain.Member;
+import hyun6ik.corerepeat.domain.member.Member;
 
 public interface MemberRepository {
 

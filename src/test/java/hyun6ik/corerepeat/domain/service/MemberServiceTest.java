@@ -1,11 +1,10 @@
 package hyun6ik.corerepeat.domain.service;
 
-import hyun6ik.corerepeat.domain.Member;
-import hyun6ik.corerepeat.infrastructure.MemberServiceImpl;
+import hyun6ik.corerepeat.domain.member.Member;
+import hyun6ik.corerepeat.domain.member.MemberService;
+import hyun6ik.corerepeat.infrastructure.member.MemberServiceImpl;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class MemberServiceTest {
 

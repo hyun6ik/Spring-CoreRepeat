@@ -1,4 +1,4 @@
-package hyun6ik.corerepeat.domain;
+package hyun6ik.corerepeat.domain.member;
 
 import lombok.Getter;
 import lombok.Setter;

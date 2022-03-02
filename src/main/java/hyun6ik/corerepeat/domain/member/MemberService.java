@@ -1,6 +1,4 @@
-package hyun6ik.corerepeat.domain.service;
-
-import hyun6ik.corerepeat.domain.Member;
+package hyun6ik.corerepeat.domain.member;
 
 public interface MemberService {
 

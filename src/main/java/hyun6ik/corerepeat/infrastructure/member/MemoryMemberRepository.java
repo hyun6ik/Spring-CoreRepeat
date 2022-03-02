@@ -1,8 +1,7 @@
-package hyun6ik.corerepeat.infrastructure;
+package hyun6ik.corerepeat.infrastructure.member;
 
-import hyun6ik.corerepeat.domain.Member;
+import hyun6ik.corerepeat.domain.member.Member;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
