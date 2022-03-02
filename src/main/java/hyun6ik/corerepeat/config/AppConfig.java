@@ -4,6 +4,7 @@ import hyun6ik.corerepeat.domain.discount.DiscountPolicy;
 import hyun6ik.corerepeat.domain.member.MemberService;
 import hyun6ik.corerepeat.domain.order.OrderService;
 import hyun6ik.corerepeat.infrastructure.discount.FixDiscountPolicy;
+import hyun6ik.corerepeat.infrastructure.discount.RateDiscountPolicy;
 import hyun6ik.corerepeat.infrastructure.member.MemberRepository;
 import hyun6ik.corerepeat.infrastructure.member.MemberServiceImpl;
 import hyun6ik.corerepeat.infrastructure.member.MemoryMemberRepository;
@@ -24,6 +25,6 @@ public class AppConfig {
     }
 
     public DiscountPolicy discountPolicy() {
-        return new FixDiscountPolicy();
+        return new RateDiscountPolicy();
     }
 }
