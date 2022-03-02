@@ -21,4 +21,8 @@ public class Member {
         this.name = name;
         Grade = grade;
     }
+
+    public static Member of(Long id, String name, Member.Grade grade) {
+        return new Member(id, name, grade);
+    }
 }
