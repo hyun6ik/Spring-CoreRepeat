@@ -1,14 +1,21 @@
 package hyun6ik.corerepeat.domain.service;
 
+import hyun6ik.corerepeat.config.AppConfig;
 import hyun6ik.corerepeat.domain.member.Member;
 import hyun6ik.corerepeat.domain.member.MemberService;
-import hyun6ik.corerepeat.infrastructure.member.MemberServiceImpl;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class MemberServiceTest {
 
-    MemberService memberService = new MemberServiceImpl();
+    MemberService memberService;
+
+    @BeforeEach
+    public void setUp() {
+        final AppConfig appConfig = new AppConfig();
+        memberService = appConfig.memberService();
+    }
 
     @Test
     void join() {

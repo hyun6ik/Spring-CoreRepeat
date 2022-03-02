@@ -1,13 +1,14 @@
 package hyun6ik.corerepeat;
 
+import hyun6ik.corerepeat.config.AppConfig;
 import hyun6ik.corerepeat.domain.member.Member;
 import hyun6ik.corerepeat.domain.member.MemberService;
-import hyun6ik.corerepeat.infrastructure.member.MemberServiceImpl;
 
 public class MemberApp {
 
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
+        final AppConfig appConfig = new AppConfig();
+        final MemberService memberService = appConfig.memberService();
 
         final Member member = Member.of(1L, "memberA", Member.Grade.VIP);
         memberService.join(member);

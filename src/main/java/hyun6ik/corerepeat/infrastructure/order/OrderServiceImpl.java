@@ -1,17 +1,19 @@
 package hyun6ik.corerepeat.infrastructure.order;
 
 import hyun6ik.corerepeat.domain.discount.DiscountPolicy;
-import hyun6ik.corerepeat.domain.member.Member;
 import hyun6ik.corerepeat.domain.order.Order;
 import hyun6ik.corerepeat.domain.order.OrderService;
-import hyun6ik.corerepeat.infrastructure.discount.FixDiscountPolicy;
 import hyun6ik.corerepeat.infrastructure.member.MemberRepository;
-import hyun6ik.corerepeat.infrastructure.member.MemoryMemberRepository;
 
 public class OrderServiceImpl implements OrderService {
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
-    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
+    private final MemberRepository memberRepository;
+    private final DiscountPolicy discountPolicy;
+
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
