@@ -2,7 +2,9 @@ package hyun6ik.corerepeat.infrastructure.discount;
 
 import hyun6ik.corerepeat.domain.discount.DiscountPolicy;
 import hyun6ik.corerepeat.domain.member.Member;
+import org.springframework.stereotype.Component;
 
+@Component
 public class RateDiscountPolicy implements DiscountPolicy {
 
     private static int discountPercent = 10;

@@ -2,11 +2,15 @@ package hyun6ik.corerepeat.infrastructure.member;
 
 import hyun6ik.corerepeat.domain.member.Member;
 import hyun6ik.corerepeat.domain.member.MemberService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MemberServiceImpl implements MemberService {
 
     private final MemberRepository memberRepository;
 
+    @Autowired
     public MemberServiceImpl(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
