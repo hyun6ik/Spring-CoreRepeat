@@ -5,6 +5,8 @@ import hyun6ik.corerepeat.domain.member.MemberService;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -35,4 +37,17 @@ public class SingletonTest {
         //then
         assertThat(singletonService1).isSameAs(singletonService2);
     }
+
+    @Test
+    @DisplayName("스프링 컨테이너와 싱글톤")
+    void springContainer() {
+        //given
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+        //when
+        final MemberService memberService1 = ac.getBean("memberService", MemberService.class);
+        final MemberService memberService2 = ac.getBean("memberService", MemberService.class);
+        //then
+        assertThat(memberService1).isSameAs(memberService2);
+    }
+
 }
