@@ -1,5 +1,6 @@
 package hyun6ik.corerepeat.infrastructure.order;
 
+import hyun6ik.corerepeat.annotation.MainDiscountPolicy;
 import hyun6ik.corerepeat.domain.discount.DiscountPolicy;
 import hyun6ik.corerepeat.domain.order.Order;
 import hyun6ik.corerepeat.domain.order.OrderService;
@@ -14,10 +15,10 @@ public class OrderServiceImpl implements OrderService {
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
-        this.memberRepository = memberRepository;
-        this.discountPolicy = discountPolicy;
-    }
+//    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+//        this.memberRepository = memberRepository;
+//        this.discountPolicy = discountPolicy;
+//    }
 
 //    // @Autowired 필드 명 매칭
 //    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy rateDiscountPolicy) {
@@ -30,6 +31,12 @@ public class OrderServiceImpl implements OrderService {
 //        this.memberRepository = memberRepository;
 //        this.discountPolicy = discountPolicy;
 //    }
+
+    // @Qualifier With Annotation
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
