@@ -4,6 +4,7 @@ import hyun6ik.corerepeat.domain.discount.DiscountPolicy;
 import hyun6ik.corerepeat.domain.member.Member;
 import org.springframework.stereotype.Component;
 
+@Component
 public class FixDiscountPolicy implements DiscountPolicy {
 
     private static int discountFixAmount = 1000;
