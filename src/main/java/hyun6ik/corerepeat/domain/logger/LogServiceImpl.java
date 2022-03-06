@@ -8,12 +8,10 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class LogServiceImpl implements LogService{
 
-//    private final MyLogger myLogger;
-    private final ObjectProvider<MyLogger> myLoggerProvider;
+    private final MyLogger myLogger;
 
     @Override
     public void logic(String id) {
-        final MyLogger myLogger = myLoggerProvider.getObject();
         myLogger.log("service id = " + id);
     }
 }

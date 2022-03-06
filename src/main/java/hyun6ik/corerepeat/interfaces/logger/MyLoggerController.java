@@ -14,13 +14,13 @@ import javax.servlet.http.HttpServletRequest;
 public class MyLoggerController {
 
     private final LogService logService;
-    //    private final MyLogger myLogger;
-    private final ObjectProvider<MyLogger> myLoggerProvider;
+    private final MyLogger myLogger;
 
     @GetMapping("log-demo")
     public String logDemo(HttpServletRequest request) {
-        final MyLogger myLogger = myLoggerProvider.getObject();
         final String requestURL = request.getRequestURL().toString();
+
+        System.out.println("myLogger = " + myLogger.getClass());
         myLogger.setRequestURL(requestURL);
 
         myLogger.log("controller test");
